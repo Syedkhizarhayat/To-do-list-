@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do List</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="header-top">
+                <h1>
+                    <i class="fa-solid fa-list-check"></i>
+                     To-Do List
+                </h1>
+                <button id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+            <p>Organize your daily tasks easily.</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total</p>
+            </div>
+            <div class="card">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+            <div class="card">
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending</p>
+            </div>
+        </div>
+
+        <section class="input-area">
+            <input type="text" id="taskInput" placeholder="Enter your task">
+
+            <div class="input-row">
+                <input type="date" id="dueDate">
+                <input type="time" id="dueTime">
+            </div>
+
+            <div class="input-row">
+                <select id="priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <select id="category">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <button id="addTaskBtn">
+                <i class="fa-solid fa-plus"></i> Add Task
+            </button>
+        </section>
+
+        <section class="search-area">
+            <input type="text" id="searchTask" placeholder="Search task...">
+        </section>
+
+        <section class="filter-area">
+            <select id="filterTasks">
+                <option value="all">All Tasks</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+        </section>
+
+        <section class="task-info">
+            <p>Total Tasks: <span id="taskCount">0</span></p>
+            <button id="clearAll">Clear All</button>
+        </section>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <audio id="reminderSound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
